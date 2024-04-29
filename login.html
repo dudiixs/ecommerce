@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <title>Tela de Login - Ecommerce</title>
+</head>
+
+<body class="gradient">
+    <div class="login-container">
+        <h1>Ecommerce</h1>
+        <input type="text" id="username" placeholder="Usuário">
+        <input type="password" id="password" placeholder="Senha" onkeydown="if(event.keyCode==13) login()">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script src="assets/js/login.js"></script>
+</body>
+
+</html>
