@@ -54,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     ];
 
+    //console.log(localStorage)
+
     produtos.forEach(produto => {
         const produtoDiv = document.createElement('div');
         produtoDiv.classList.add('produto');
@@ -75,36 +77,42 @@ document.addEventListener('DOMContentLoaded', function () {
         descricao.classList.add('descricao');
         descricao.textContent = produto.descricao;
 
+        const botao = document.createElement('BUTTON');
+        botao.classList.add('btn-carrinho')
+        botao.innerHTML = "Adicionar ao Carrinho"
+
+
+        // Função botão
+        botao.onclick = function () {
+            //Criação variavel do carrinho
+            let actualCart = localStorage.getItem('cart');
+
+            if (actualCart) {
+                actualCart = JSON.parse(actualCart);
+            }
+
+            if (!actualCart) {
+                actualCart = [];
+            }
+
+            const existentId = actualCart.find(prod => prod.id == produto.id);
+
+            if (existentId) {
+                return
+            }
+
+            actualCart.push(produto);
+            localStorage.setItem('cart', JSON.stringify(actualCart));
+            console.log(JSON.parse(localStorage.cart))
+        }
+
         produtoDiv.appendChild(imagem);
         produtoDiv.appendChild(nome);
         produtoDiv.appendChild(plataforma);
         produtoDiv.appendChild(preco);
         produtoDiv.appendChild(descricao);
+        produtoDiv.appendChild(botao);
 
         catalogo.appendChild(produtoDiv);
     });
 });
-
-//Selecionar os itens clicando
-
-let menuItem = document.querySelectorAll('.item-menu')
-
-function selectLink() {
-    menuItem.forEach((item) =>
-        item.classList.remove('ativo')
-    )
-    this.classList.add('ativo')
-}
-
-menuItem.forEach((item) =>
-    item.addEventListener('click', selectLink)
-)
-
-//Expandir o menu
-
-let btnExp = document.querySelector('#btn-exp')
-let menuSide = document.querySelector('.menu-lateral')
-
-btnExp.addEventListener('click', function () {
-    menuSide.classList.toggle('expandir')
-})
