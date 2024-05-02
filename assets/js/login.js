@@ -1,33 +1,61 @@
-function login() {
-    let username = document.getElementById('username').value;
-    let password = document.getElementById('password').value;
+let btn = document.querySelector('.fa-eye')
 
-    // Obtém os usuários salvos no localStorage
-    let savedUsers = localStorage.getItem('users');
-    savedUsers = savedUsers ? JSON.parse(savedUsers) : [];
+btn.addEventListener('click', () => {
+    let inputSenha = document.querySelector('#senha')
 
-    // Verifica se há um usuário com o nome de usuário fornecido e senha correspondente
-    let foundUser = savedUsers.find(function (user) {
-        return user.username === username && user.password === password;
-    });
-
-    // Usuario mockado
-    if (foundUser || (username === 'admin' && password === 'admin')) {
-        // Armazena o usuário logado no localStorage
-        localStorage.setItem('loggedUser', JSON.stringify(foundUser || { username: 'admin', name: 'Admin' }));
-
-        // Redireciona o usuário para a página de perfil após o login bem-sucedido
-        window.location.href = 'index.html';
+    if (inputSenha.getAttribute('type') == 'password') {
+        inputSenha.setAttribute('type', 'text')
     } else {
-        alert('Usuário ou senha incorretos. Tente novamente.');
+        inputSenha.setAttribute('type', 'password')
+    }
+})
+
+function entrar() {
+    let usuario = document.querySelector('#usuario')
+    let userLabel = document.querySelector('#userLabel')
+
+    let senha = document.querySelector('#senha')
+    let senhaLabel = document.querySelector('#senhaLabel')
+
+    let msgError = document.querySelector('#msgError')
+    let listaUser = []
+
+    let userValid = {
+        nome: '',
+        user: '',
+        senha: ''
     }
 
-    // Adiciona um ouvinte de evento de teclado ao campo de senha
-    document.getElementById('password').addEventListener('keyup', function (event) {
-        // Verifica se a tecla pressionada foi 'Enter' (código 13)
-        if (event.keyCode === 13) {
-            // Chama a função login() quando 'Enter' for pressionado
-            login();
+    listaUser = JSON.parse(localStorage.getItem('listaUser'))
+
+    listaUser.forEach((item) => {
+        if (usuario.value == item.userCad && senha.value == item.senhaCad) {
+
+            userValid = {
+                nome: item.nomeCad,
+                user: item.userCad,
+                senha: item.senhaCad
+            }
+
         }
-    });
+    })
+
+    if (usuario.value == userValid.user && senha.value == userValid.senha) {
+        window.location.href = 'index.html'
+
+        let mathRandom = Math.random().toString(16).substr(2)
+        let token = mathRandom + mathRandom
+
+        localStorage.setItem('token', token)
+        localStorage.setItem('userLogado', JSON.stringify(userValid))
+    } else {
+        userLabel.setAttribute('style', 'color: red')
+        usuario.setAttribute('style', 'border-color: red')
+        senhaLabel.setAttribute('style', 'color: red')
+        senha.setAttribute('style', 'border-color: red')
+        msgError.setAttribute('style', 'display: block')
+        msgError.innerHTML = 'Usuário ou senha incorretos'
+        usuario.focus()
+    }
+
 }

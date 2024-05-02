@@ -1,37 +1,135 @@
-function signup() {
-    let newName = document.getElementById('newName').value;
-    let newUsername = document.getElementById('newUsername').value;
-    let newPassword = document.getElementById('newPassword').value;
+let btn = document.querySelector('#verSenha')
+let btnConfirm = document.querySelector('#verConfirmSenha')
 
-    // Obtém os usuários salvos no localStorage
-    let savedUsers = localStorage.getItem('users');
-    savedUsers = savedUsers ? JSON.parse(savedUsers) : [];
 
-    // Verifica se já existe um usuário com o mesmo nome de usuário
-    let existingUser = savedUsers.find(function (user) {
-        return user.username === newUsername;
-    });
+let nome = document.querySelector('#nome')
+let labelNome = document.querySelector('#labelNome')
+let validNome = false
 
-    if (existingUser) {
-        alert('Usuário já cadastrado. Por favor, escolha outro nome de usuário.');
-        return;
+let usuario = document.querySelector('#usuario')
+let labelUsuario = document.querySelector('#labelUsuario')
+let validUsuario = false
+
+let senha = document.querySelector('#senha')
+let labelSenha = document.querySelector('#labelSenha')
+let validSenha = false
+
+let confirmSenha = document.querySelector('#confirmSenha')
+let labelConfirmSenha = document.querySelector('#labelConfirmSenha')
+let validConfirmSenha = false
+
+let msgError = document.querySelector('#msgError')
+let msgSuccess = document.querySelector('#msgSuccess')
+
+nome.addEventListener('keyup', () => {
+    if (nome.value.length <= 2) {
+        labelNome.setAttribute('style', 'color: red')
+        labelNome.innerHTML = 'Nome *Insira no minimo 3 caracteres'
+        nome.setAttribute('style', 'border-color: red')
+        validNome = false
+    } else {
+        labelNome.setAttribute('style', 'color: green')
+        labelNome.innerHTML = 'Nome'
+        nome.setAttribute('style', 'border-color: green')
+        validNome = true
     }
+})
 
-    // Cria um novo objeto de usuário com nome, usuário e senha
-    let newUser = {
-        name: newName,
-        username: newUsername,
-        password: newPassword
-    };
+usuario.addEventListener('keyup', () => {
+    if (usuario.value.length <= 4) {
+        labelUsuario.setAttribute('style', 'color: red')
+        labelUsuario.innerHTML = 'Usuário *Insira no minimo 5 caracteres'
+        usuario.setAttribute('style', 'border-color: red')
+        validUsuario = false
+    } else {
+        labelUsuario.setAttribute('style', 'color: green')
+        labelUsuario.innerHTML = 'Usuário'
+        usuario.setAttribute('style', 'border-color: green')
+        validUsuario = true
+    }
+})
 
-    // Adiciona o novo usuário à lista de usuários salvos
-    savedUsers.push(newUser);
+senha.addEventListener('keyup', () => {
+    if (senha.value.length <= 5) {
+        labelSenha.setAttribute('style', 'color: red')
+        labelSenha.innerHTML = 'Senha *Insira no minimo 6 caracteres'
+        senha.setAttribute('style', 'border-color: red')
+        validSenha = false
+    } else {
+        labelSenha.setAttribute('style', 'color: green')
+        labelSenha.innerHTML = 'Senha'
+        senha.setAttribute('style', 'border-color: green')
+        validSenha = true
+    }
+})
 
-    // Salva a lista atualizada de usuários de volta no localStorage
-    localStorage.setItem('users', JSON.stringify(savedUsers));
+confirmSenha.addEventListener('keyup', () => {
+    if (senha.value != confirmSenha.value) {
+        labelConfirmSenha.setAttribute('style', 'color: red')
+        labelConfirmSenha.innerHTML = 'Confirmar Senha *As senhas não conferem'
+        confirmSenha.setAttribute('style', 'border-color: red')
+        validConfirmSenha = false
+    } else {
+        labelConfirmSenha.setAttribute('style', 'color: green')
+        labelConfirmSenha.innerHTML = 'Confirmar Senha'
+        confirmSenha.setAttribute('style', 'border-color: green')
+        validConfirmSenha = true
+    }
+})
 
-    alert('Cadastro realizado com sucesso!');
+function cadastrar() {
+    if (validNome && validUsuario && validSenha && validConfirmSenha) {
+        let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
 
-    // Redireciona o usuário de volta para a página de login após o cadastro bem-sucedido
-    window.location.href = 'login.html';
+        listaUser.push(
+            {
+                nomeCad: nome.value,
+                userCad: usuario.value,
+                senhaCad: senha.value
+            }
+        )
+
+        localStorage.setItem('listaUser', JSON.stringify(listaUser))
+
+
+        msgSuccess.setAttribute('style', 'display: block')
+        msgSuccess.innerHTML = '<strong>Cadastrando usuário...</strong>'
+        msgError.setAttribute('style', 'display: none')
+        msgError.innerHTML = ''
+
+        setTimeout(() => {
+            window.location.href = 'login.html'
+        }, 3000)
+
+
+    } else {
+        msgError.setAttribute('style', 'display: block')
+        msgError.innerHTML = '<strong>Preencha todos os campos corretamente antes de cadastrar</strong>'
+        msgSuccess.innerHTML = ''
+        msgSuccess.setAttribute('style', 'display: none')
+    }
 }
+
+btn.addEventListener('click', () => {
+    let inputSenha = document.querySelector('#senha')
+
+    if (inputSenha.getAttribute('type') == 'password') {
+        inputSenha.setAttribute('type', 'text')
+    } else {
+        inputSenha.setAttribute('type', 'password')
+    }
+})
+
+btnConfirm.addEventListener('click', () => {
+    let inputConfirmSenha = document.querySelector('#confirmSenha')
+
+    if (inputConfirmSenha.getAttribute('type') == 'password') {
+        inputConfirmSenha.setAttribute('type', 'text')
+    } else {
+        inputConfirmSenha.setAttribute('type', 'password')
+    }
+})
+
+
+
+
