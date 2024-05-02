@@ -4,5 +4,10 @@
  Grupo
  Eduardo Martins
  Guilherme Lati
+<<<<<<< Updated upstream
  Mário Coelho
  Mario Dias
+=======
+ Mario Colho
+ Mario Dias
+>>>>>>> Stashed changes
