@@ -16,7 +16,7 @@ function showUsername() {
 function logout() {
     localStorage.removeItem('loggedUser');
     // Redireciona o usuário para a página de login após fazer logout
-    window.location.href = 'login.html';
+    window.location.href = '/assets/html/login.html';
 }
 
 // Chamada para exibir o nome do usuário quando a página carrega
