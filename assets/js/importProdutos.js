@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "plataforma": "Nintendo Switch",
             "preco": 329.90,
             "estoque": 30,
-            "descricao": "O mais recente jogo da série FIFA, com gráficos aprimorados, modos de jogo emocionantes e uma jogabilidade aprimorada para proporcionar uma experiência de futebol autêntica.",
+            "descricao": "Um relaxante simulador de vida em uma ilha deserta, onde os jogadores podem construir, decorar e interagir com amigos e personagens adoráveis em um ambiente acolhedor e cheio de possibilidades.",
             "imagem": "https://cdn.cdkeys.com/500x706/media/catalog/product/f/i/fifa-22-pc-game-origin-cover_14_.jpg",
             "classificacao_etaria": "Para maiores de 3 anos"
         },
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "plataforma": "Playstation 5",
             "preco": 89.90,
             "estoque": 40,
-            "descricao": "~~~~~~~~~~~~~~~~",
+            "descricao": "Uma emocionante jornada de ação e aventura no submundo, onde os jogadores desafiam perigos, obtêm poderes divinos e buscam a redenção de Zagreu, filho de Hades.",
             "imagem": "https://media.wired.com/photos/5f6cf5ec6f32a729dc0b3a89/master/w_1600%2Cc_limit/Culture_inline_Hades_PackArt.jpg",
             "classificacao_etaria": "Para maiores de 18 anos"
         },
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "plataforma": "Playstation 4",
             "preco": 259.90,
             "estoque": 30,
-            "descricao": "Um jogo de tiro em primeira pessoa gratuito e online, onde os jogadores podem competir em partidas multiplayer intensas em diversos modos de jogo.",
+            "descricao": "Um eletrizante jogo de ação onde os jogadores integram a Suicide Squad em uma missão arriscada para derrubar a Liga da Justiça, enfrentando desafios épicos e reviravoltas surpreendentes.",
             "imagem": "https://i0.wp.com/www.portaldonerd.com.br/wp-content/uploads/2021/09/dd5635903fa5547dec0d8a19b27ef13b-1.jpeg",
             "classificacao_etaria": "Para maiores de 18 anos"
         },
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "plataforma": "Playstation 5",
             "preco": 229.90,
             "estoque": 10,
-            "descricao": "Um jogo de tiro em primeira pessoa gratuito e online, onde os jogadores podem competir em partidas multiplayer intensas em diversos modos de jogo.",
+            "descricao": "Explore Nova York como o lendário herói aracnídeo em uma emocionante aventura de ação, onde os jogadores enfrentam vilões clássicos, balançam pela cidade e protegem os inocentes.",
             "imagem": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e9c13725-c5c3-49f8-be82-92147e347045/dcya5nm-04a41370-556e-438b-a222-d6f805d13a24.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U5YzEzNzI1LWM1YzMtNDlmOC1iZTgyLTkyMTQ3ZTM0NzA0NVwvZGN5YTVubS0wNGE0MTM3MC01NTZlLTQzOGItYTIyMi1kNmY4MDVkMTNhMjQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yhZhz_9tYWttUOkkbTYLfk8_DHwCuwynPNNwbOBDlBE",
             "classificacao_etaria": "Para maiores de 18 anos"
         },
@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
             "plataforma": "Playstation 5",
             "preco": 229.90,
             "estoque": 10,
-            "descricao": "Um jogo de tiro em primeira pessoa gratuito e online, onde os jogadores podem competir em partidas multiplayer intensas em diversos modos de jogo.",
-            "imagem": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e9c13725-c5c3-49f8-be82-92147e347045/dcya5nm-04a41370-556e-438b-a222-d6f805d13a24.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U5YzEzNzI1LWM1YzMtNDlmOC1iZTgyLTkyMTQ3ZTM0NzA0NVwvZGN5YTVubS0wNGE0MTM3MC01NTZlLTQzOGItYTIyMi1kNmY4MDVkMTNhMjQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yhZhz_9tYWttUOkkbTYLfk8_DHwCuwynPNNwbOBDlBE",
+            "descricao": "Entre no mundo das corridas clandestinas em Palm City, onde os jogadores desafiam autoridades e rivais em uma busca pela glória nas ruas, personalizando carros e dominando as pistas.",
+            "imagem": "https://upload.wikimedia.org/wikipedia/pt/f/f1/Need_for_Speed_Heat_capa.png",
             "classificacao_etaria": "Para maiores de 18 anos"
         },
     ];
