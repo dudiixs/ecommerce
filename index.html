@@ -5,69 +5,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/carrossel.css">
     <link rel="stylesheet" href="assets/css/sideMenu.css">
     <title>Home</title>
 </head>
 
 <body>
-    <nav class="menu-lateral">
-        <div class="btn-expandir">
-            <i class="bi bi-list" id="btn-exp"></i>
-        </div>
-        <ul>
-            <li class="item-menu ativo">
-                <a href="index.html">
-                    <span class="icon"><i class="bi bi-house-door"></i></span>
-                    <span class="txt-link">Home</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="assets/html/produtos.html">
-                    <span class="icon"><i class="bi bi-collection"></i></span>
-                    <span class="txt-link">Catalogo</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="assets/html/carrinho.html">
-                    <span class="icon"><i class="bi bi-cart2"></i></span>
-                    <span class="txt-link">Carrinho</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="assets/html/perfil.html">
-                    <span class="icon"><i class="bi bi-person-circle"></i></span>
-                    <span class="txt-link">Perfil</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="assets/html/login.html">
-                    <span class="icon"><i class="bi bi-x-circle"></i></span>
-                    <span class="txt-link">Sair</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <div class="container">
-        <button class="arrow-left control" aria-label="Previous image"><i class="bi bi-arrow-bar-left"></i></button>
-        <button class="arrow-right control" aria-label="Next image"><i class="bi bi-arrow-bar-right"></i></button>
-        <div class="gallery-wrapper">
-            <div class="gallery">
-                <img src="https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg"
-                    alt="Box art game The Legend of Zelda Breath of The Wild" class="item current-item">
-                <img src="https://cdn.cdkeys.com/500x706/media/catalog/product/f/i/fifa-22-pc-game-origin-cover_14_.jpg"
-                    alt="Box art game Animal Crossing New Horizon" class="item">
-                <img src="https://media.wired.com/photos/5f6cf5ec6f32a729dc0b3a89/master/w_1600%2Cc_limit/Culture_inline_Hades_PackArt.jpg"
-                    alt="Box art game Hades" class="item">
-                <img src="https://i0.wp.com/www.portaldonerd.com.br/wp-content/uploads/2021/09/dd5635903fa5547dec0d8a19b27ef13b-1.jpeg"
-                    alt="Box art game Suicide Squad: Kill The Justice League" class="item">
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e9c13725-c5c3-49f8-be82-92147e347045/dcya5nm-04a41370-556e-438b-a222-d6f805d13a24.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U5YzEzNzI1LWM1YzMtNDlmOC1iZTgyLTkyMTQ3ZTM0NzA0NVwvZGN5YTVubS0wNGE0MTM3MC01NTZlLTQzOGItYTIyMi1kNmY4MDVkMTNhMjQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yhZhz_9tYWttUOkkbTYLfk8_DHwCuwynPNNwbOBDlBE"
-                    alt="Box art game Marvel Spider Man" class="item">
+    <div class="navbar" id="myNavbar">
+        <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="assets/html/produtos.html"><i class="fas fa-list"></i> Catalogo</a>
+        <a href="assets/html/carrinho.html"><i class="fas fa-shopping-cart"></i> Carrinho</a>
+        <a href="assets/html/perfil.html"><i class="fas fa-user-circle"></i> Perfil</a>
+        <a href="assets/html/login.html"><i class="fas fa-sign-out-alt"></i> Sair</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <body>
+        <div class="container">
+            <div class="card">
+                <img class="background" src="https://pbs.twimg.com/media/GAijtfqWkAAEF3v.jpg" alt="">
+
+                <div class="card-content">
+                    <div class="profile-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-gamepad-2">
+                            <line x1="6" x2="10" y1="11" y2="11" />
+                            <line x1="8" x2="8" y1="9" y2="13" />
+                            <line x1="15" x2="15.01" y1="12" y2="12" />
+                            <line x1="18" x2="18.01" y1="10" y2="10" />
+                            <path
+                                d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+                        </svg>
+                    </div>
+
+                    <h3 class="title">GTA 6</h3>
+                </div>
+                <div class="backdrop"></div>
+            </div>
+
+            <div class="card">
+                <img class="background" src="https://pbs.twimg.com/media/FyIEpdVWcAEfwNo.jpg" alt="">
+
+                <div class="card-content">
+                    <div class="profile-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-gamepad-2">
+                            <line x1="6" x2="10" y1="11" y2="11" />
+                            <line x1="8" x2="8" y1="9" y2="13" />
+                            <line x1="15" x2="15.01" y1="12" y2="12" />
+                            <line x1="18" x2="18.01" y1="10" y2="10" />
+                            <path
+                                d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+                        </svg>
+                    </div>
+
+                    <h3 class="title">Spider-Man PS5</h3>
+                </div>
+                <div class="backdrop"></div>
+            </div>
+
+            <div class="card">
+                <img class="background"
+                    src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/09/god-of-war-ragnarok-key-art.jpg"
+                    alt="">
+
+                <div class="card-content">
+                    <div class="profile-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-gamepad-2">
+                            <line x1="6" x2="10" y1="11" y2="11" />
+                            <line x1="8" x2="8" y1="9" y2="13" />
+                            <line x1="15" x2="15.01" y1="12" y2="12" />
+                            <line x1="18" x2="18.01" y1="10" y2="10" />
+                            <path
+                                d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+                        </svg>
+                    </div>
+
+                    <h3 class="title">God Of War</h3>
+                </div>
+                <div class="backdrop"></div>
+            </div>
+
+            <div class="card">
+                <img class="background"
+                    src="https://assetsio.gnwcdn.com/ar6zu.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp"
+                    alt="">
+
+                <div class="card-content">
+                    <div class="profile-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-gamepad-2">
+                            <line x1="6" x2="10" y1="11" y2="11" />
+                            <line x1="8" x2="8" y1="9" y2="13" />
+                            <line x1="15" x2="15.01" y1="12" y2="12" />
+                            <line x1="18" x2="18.01" y1="10" y2="10" />
+                            <path
+                                d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+                        </svg>
+                    </div>
+
+                    <h3 class="title">The Last of Us II</h3>
+                </div>
+                <div class="backdrop"></div>
+            </div>
+
+            <div class="card">
+                <img class="background"
+                    src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/11/elden-ring-cover.jpg"
+                    alt="">
+
+                <div class="card-content">
+                    <div class="profile-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-gamepad-2">
+                            <line x1="6" x2="10" y1="11" y2="11" />
+                            <line x1="8" x2="8" y1="9" y2="13" />
+                            <line x1="15" x2="15.01" y1="12" y2="12" />
+                            <line x1="18" x2="18.01" y1="10" y2="10" />
+                            <path
+                                d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+                        </svg>
+                    </div>
+
+                    <h3 class="title">Elden Ring</h3>
+                </div>
+                <div class="backdrop"></div>
             </div>
         </div>
-    </div>
-    <script src="assets/js/home.js"></script>
-    <script src="assets/js/sideMenu.js"></script>
-</body>
+        <script src="assets/js/carrossel.js"></script>
+        <script src="assets/js/navbar.js"></script>
+    </body>
 
 </html>

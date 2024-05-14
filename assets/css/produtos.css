@@ -24,19 +24,75 @@ body {
 }
 
 .produto {
-    border: 1px solid black;
-    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Isso fará o botão ficar sempre no final */
+}
+
+.produto:hover {
+    transform: translateY(-5px);
 }
 
 .produto img {
     max-width: 100%;
+    display: block;
+    border-radius: 5px;
 }
 
 .produto h3 {
-    margin-top: 0;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
 }
 
 .produto .descricao {
     font-size: 14px;
     margin-top: 5px;
+    color: #666;
+}
+
+.title {
+    padding: 40px 0 20px;
+    /* Altere o primeiro valor para adicionar espaço acima do título */
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    margin-bottom: 20px;
+}
+
+
+
+.produto .descricao {
+    margin-bottom: 10px;
+    /* Adicionando espaço entre o texto e o botão */
+}
+
+.btn-carrinho {
+    align-self: flex-end;
+    /* Isso faz o botão ficar sempre no final do card */
+    margin-top: auto;
+    /* Isso garante que o botão esteja sempre no final */
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    /* Cor de fundo azul */
+    color: #fff;
+    /* Cor de texto branca */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-carrinho:hover {
+    background-color: #0056b3;
+    /* Cor de fundo azul escuro quando hover */
 }
