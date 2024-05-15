@@ -88,33 +88,44 @@ document.addEventListener('DOMContentLoaded', function () {
         descricao.textContent = produto.descricao;
 
         const botao = document.createElement('BUTTON');
-        botao.classList.add('btn-carrinho')
-        botao.innerHTML = "Adicionar ao Carrinho"
-
+        botao.classList.add('btn-carrinho');
+        botao.innerHTML = "Adicionar ao Carrinho";
 
         // Função botão
         botao.onclick = function () {
-            //Criação variavel do carrinho
+            // Recuperar o carrinho do localStorage
             let actualCart = localStorage.getItem('cart');
-
             if (actualCart) {
                 actualCart = JSON.parse(actualCart);
             }
 
+            // Se o carrinho estiver vazio, inicializar como um array vazio
             if (!actualCart) {
                 actualCart = [];
             }
 
-            const existentId = actualCart.find(prod => prod.id == produto.id);
+            // Verificar se o produto já está no carrinho
+            const existentProduct = actualCart.find(prod => prod.id === produto.id);
 
-            if (existentId) {
-                return
+            if (existentProduct) {
+                // Se o produto já estiver no carrinho, aumentar a quantidade
+                existentProduct.quantity += 1;
+            } else {
+                // Se o produto não estiver no carrinho, adicioná-lo com quantidade 1
+                produto.quantity = 1;
+                actualCart.push(produto);
             }
 
-            actualCart.push(produto);
+            // Salvar o carrinho atualizado no localStorage
             localStorage.setItem('cart', JSON.stringify(actualCart));
-            console.log(JSON.parse(localStorage.cart))
+
+            // Atualizar a quantidade de itens no carrinho no console (ou na interface, conforme necessário)
+            console.log(JSON.parse(localStorage.getItem('cart')));
         }
+
+        // Adicionar o botão ao DOM (exemplo, você pode ter um local específico para isso)
+        document.body.appendChild(botao);
+
 
         produtoDiv.appendChild(imagem);
         produtoDiv.appendChild(nome);

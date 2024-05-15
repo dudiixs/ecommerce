@@ -131,3 +131,14 @@ main {
     padding: 20px;
     /* Adiciona espaço entre a navbar e o conteúdo */
 }
+
+.cart-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0 5px;
+    font-size: 14px;
+    position: relative;
+    top: -10px;
+    left: -10px;
+}
