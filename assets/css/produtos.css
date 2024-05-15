@@ -49,13 +49,13 @@ body {
 .produto h3 {
     margin-top: 10px;
     font-size: 18px;
-    color: #333;
+    color: #23232e;
 }
 
 .produto .descricao {
     font-size: 14px;
     margin-top: 5px;
-    color: #666;
+    color: #000;
 }
 
 .title {
@@ -63,8 +63,8 @@ body {
     /* Altere o primeiro valor para adicionar espaço acima do título */
     text-align: center;
     font-size: 24px;
-    color: #333;
-    border-bottom: 2px solid #007bff;
+    color: #000;
+    border-bottom: 2px solid #23232e;
     margin-bottom: 20px;
 }
 
@@ -80,7 +80,7 @@ body {
     /* Isso garante que o botão esteja sempre no final */
     padding: 10px 20px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #23232e;
     /* Cor de fundo azul */
     color: #fff;
     /* Cor de texto branca */
@@ -91,6 +91,7 @@ body {
 }
 
 .btn-carrinho:hover {
-    background-color: #0056b3;
+    background-color: #fff;
+    color: #000;
     /* Cor de fundo azul escuro quando hover */
 }

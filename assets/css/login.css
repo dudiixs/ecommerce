@@ -30,7 +30,7 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #272262
+    color: #23232e
 }
 
 .label-float input {
@@ -38,7 +38,7 @@ h1 {
     padding: 5px 5px;
     display: inline-block;
     border: 0;
-    border-bottom: 2px solid #272262;
+    border-bottom: 2px solid #23232e;
     background-color: transparent;
     outline: none;
     min-width: 180px;
@@ -60,7 +60,7 @@ h1 {
 }
 
 .label-float label {
-    color: #272262;
+    color: #23232e;
     position: absolute;
     top: 0;
     left: 0;
@@ -77,8 +77,8 @@ h1 {
 
 button {
     background-color: transparent;
-    border-color: #272262;
-    color: #272262;
+    border-color: #23232e;
+    color: #23232e;
     padding: 7px;
     font-weight: bold;
     font-size: 12pt;
@@ -90,7 +90,7 @@ button {
 }
 
 button:hover {
-    background-color: #272262;
+    background-color: #23232e;
     color: #fff;
 }
 
@@ -119,7 +119,7 @@ a {
 }
 
 a:hover {
-    color: #272262;
+    color: #23232e;
 }
 
 .fa-eye {
@@ -127,7 +127,7 @@ a:hover {
     top: 15px;
     right: 10px;
     cursor: pointer;
-    color: #272262;
+    color: #23232e;
 }
 
 #msgError {

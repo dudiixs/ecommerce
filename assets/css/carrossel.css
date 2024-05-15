@@ -27,15 +27,11 @@ img {
 
 .container {
     width: 90%;
-    /* Utiliza 90% da largura da tela */
     max-width: 1200px;
-    /* Define uma largura máxima */
     height: 70vh;
-    /* Define a altura do carrossel */
     display: flex;
     gap: 10px;
     margin-inline: auto;
-    /* Centraliza horizontalmente */
 }
 
 .card {
@@ -43,19 +39,39 @@ img {
     height: 100%;
     border-radius: 30px;
     overflow: hidden;
-
     display: flex;
     align-items: flex-end;
     flex-grow: 1;
     cursor: pointer;
     position: relative;
     transition: flex-grow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-
     --transition-timing: 0.35s;
 }
 
 .card:hover {
     flex-grow: 7;
+}
+
+.card:hover>.background {
+    filter: brightness(1);
+}
+
+.card:hover>.card-content {
+    inset: 20px;
+    top: auto;
+}
+
+.card.active {
+    flex-grow: 7;
+}
+
+.card.active>.background {
+    filter: brightness(1);
+}
+
+.card.active>.card-content {
+    inset: 20px;
+    top: auto;
 }
 
 .card>.background {
@@ -68,10 +84,6 @@ img {
     transition: var(--transition-timing) ease;
 }
 
-.card:hover>.background {
-    filter: brightness(1);
-}
-
 .card>.card-content {
     display: flex;
     align-items: center;
@@ -82,11 +94,6 @@ img {
     overflow: hidden;
     transition: var(--transition-timing);
     z-index: 10;
-}
-
-.card:hover>.card-content {
-    inset: 20px;
-    top: auto;
 }
 
 .card-content>* {
@@ -105,7 +112,8 @@ img {
     overflow: hidden;
 }
 
-.card:hover .profile-image {
+.card:hover .profile-image,
+.card.active .profile-image {
     border: 1px solid rgb(110, 252, 205);
 }
 
@@ -113,7 +121,8 @@ img {
     stroke: #fefefe;
 }
 
-.card:hover .profile-image>svg {
+.card:hover .profile-image>svg,
+.card.active .profile-image>svg {
     stroke: rgb(110, 252, 205);
 }
 
@@ -124,7 +133,8 @@ img {
     opacity: 0;
 }
 
-.card:hover .title {
+.card:hover .title,
+.card.active .title {
     opacity: 1;
     translate: 0 0;
 }
@@ -137,4 +147,78 @@ img {
     height: 100px;
     z-index: 0;
     background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .container {
+        height: 60vh;
+    }
+
+    .card {
+        min-width: 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        height: 50vh;
+    }
+
+    .card {
+        min-width: 50px;
+    }
+
+    .card>.card-content {
+        left: 5px;
+        right: 5px;
+        bottom: 10px;
+    }
+
+    .card:hover>.card-content,
+    .card.active>.card-content {
+        inset: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+    }
+
+    .card:hover {
+        flex-grow: unset;
+    }
+
+    .card.active {
+        flex-grow: 1;
+    }
+
+    .card>.card-content {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .card:hover>.card-content,
+    .card.active>.card-content {
+        inset: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+    }
+
+    .card {
+        min-width: 100%;
+    }
 }

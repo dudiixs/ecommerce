@@ -1,13 +1,17 @@
 const cardsContainer = document.querySelector(".container");
 
-cardsContainer.addEventListener("click", (e) => {
+function handleCardClick(e) {
     const target = e.target.closest(".card");
-
     if (!target) return;
 
-    cardsContainer.querySelectorAll(".card").forEach((card) => {
-        card.classList.remove("active");
-    });
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    target.classList.add("active");
-});
+    if (isMobile) {
+        cardsContainer.querySelectorAll(".card").forEach((card) => {
+            card.classList.remove("active");
+        });
+        target.classList.add("active");
+    }
+}
+
+cardsContainer.addEventListener("click", handleCardClick);
