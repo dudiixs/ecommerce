@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" type="imagex/png" href="../img/458b0a1ea92c0b7e39d0d427c5262dfb.ico">
+    <link rel="stylesheet" href="../css/carrinho.css">
     <link rel="stylesheet" href="../css/navbar.css">
-    <title>Carrinho</title>
+    <title>Carrinho de Compras - X3 Games</title>
 </head>
 
 <body>
@@ -18,16 +21,20 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="../../index.html">Início</a></li>
-                <li><a href="../html/produtos.html">Catalogo</a></li>
-                <li><a href="../html/carrinho.html">Carrinho</a><span id="cart-counter" class="cart-count">0</span>
+                <li><a href="../../index.html"><i class="bi bi-house"></i></a></li>
+                <li><a href="../html/produtos.html"><i class="bi bi-collection"></i></a></li>
+                <li><a href="../html/carrinho.html"><i class="bi bi-cart2"></i></a><span id="cart-counter"
+                        class="cart-count">0</span>
                 </li>
-                <li><a href="../html/perfil.html">Perfil</a></li>
+                <li><a href="../html/perfil.html"><i class="bi bi-person-circle"></i></a></li>
             </ul>
         </nav>
     </header>
+    <h2>Carrinho de Compras</h2>
+    <div id="carrinho" class="carrinho-container"></div>
+    <!-- Adiciona a classe "carrinho-container" para facilitar a seleção via JavaScript -->
     <script src="../js/navbar.js"></script>
-    <script src="../js/carrinho.js"></script>
+    <script type="module" src="../js/carrinho.js"></script>
 </body>
 
 </html>

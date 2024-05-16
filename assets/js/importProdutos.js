@@ -1,70 +1,7 @@
+import produtos from './catalogo.js';
+
 document.addEventListener('DOMContentLoaded', function () {
     const catalogo = document.querySelector('.catalogo');
-
-    const produtos = [
-        {
-            "id": 1,
-            "nome": "The Legend of Zelda: Breath of the Wild",
-            "plataforma": "Nintendo Switch",
-            "preco": 199.99,
-            "estoque": 50,
-            "descricao": "Um jogo de ação e aventura que se passa em um mundo aberto expansivo, onde os jogadores podem explorar livremente a paisagem, lutar contra inimigos, completar missões e resolver quebra-cabeças.",
-            "imagem": "https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg",
-            "classificacao_etaria": "Para maiores de 10 anos"
-        },
-        {
-            "id": 2,
-            "nome": "Animal Crossing New Horizons",
-            "plataforma": "Nintendo Switch",
-            "preco": 329.90,
-            "estoque": 30,
-            "descricao": "Um relaxante simulador de vida em uma ilha deserta, onde os jogadores podem construir, decorar e interagir com amigos e personagens adoráveis em um ambiente acolhedor e cheio de possibilidades.",
-            "imagem": "https://cdn.cdkeys.com/500x706/media/catalog/product/f/i/fifa-22-pc-game-origin-cover_14_.jpg",
-            "classificacao_etaria": "Para maiores de 3 anos"
-        },
-        {
-            "id": 3,
-            "nome": "Hades",
-            "plataforma": "Playstation 5",
-            "preco": 89.90,
-            "estoque": 40,
-            "descricao": "Uma emocionante jornada de ação e aventura no submundo, onde os jogadores desafiam perigos, obtêm poderes divinos e buscam a redenção de Zagreu, filho de Hades.",
-            "imagem": "https://media.wired.com/photos/5f6cf5ec6f32a729dc0b3a89/master/w_1600%2Cc_limit/Culture_inline_Hades_PackArt.jpg",
-            "classificacao_etaria": "Para maiores de 18 anos"
-        },
-        {
-            "id": 4,
-            "nome": "Suicide Squad: Kill The Justice League",
-            "plataforma": "Playstation 4",
-            "preco": 259.90,
-            "estoque": 30,
-            "descricao": "Um eletrizante jogo de ação onde os jogadores integram a Suicide Squad em uma missão arriscada para derrubar a Liga da Justiça, enfrentando desafios épicos e reviravoltas surpreendentes.",
-            "imagem": "https://i0.wp.com/www.portaldonerd.com.br/wp-content/uploads/2021/09/dd5635903fa5547dec0d8a19b27ef13b-1.jpeg",
-            "classificacao_etaria": "Para maiores de 18 anos"
-        },
-        {
-            "id": 5,
-            "nome": "Marvel Spider Man",
-            "plataforma": "Playstation 5",
-            "preco": 229.90,
-            "estoque": 10,
-            "descricao": "Explore Nova York como o lendário herói aracnídeo em uma emocionante aventura de ação, onde os jogadores enfrentam vilões clássicos, balançam pela cidade e protegem os inocentes.",
-            "imagem": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e9c13725-c5c3-49f8-be82-92147e347045/dcya5nm-04a41370-556e-438b-a222-d6f805d13a24.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U5YzEzNzI1LWM1YzMtNDlmOC1iZTgyLTkyMTQ3ZTM0NzA0NVwvZGN5YTVubS0wNGE0MTM3MC01NTZlLTQzOGItYTIyMi1kNmY4MDVkMTNhMjQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yhZhz_9tYWttUOkkbTYLfk8_DHwCuwynPNNwbOBDlBE",
-            "classificacao_etaria": "Para maiores de 18 anos"
-        },
-        {
-            "id": 6,
-            "nome": "Need For Speed: Heat",
-            "plataforma": "Playstation 5",
-            "preco": 229.90,
-            "estoque": 10,
-            "descricao": "Entre no mundo das corridas clandestinas em Palm City, onde os jogadores desafiam autoridades e rivais em uma busca pela glória nas ruas, personalizando carros e dominando as pistas.",
-            "imagem": "https://upload.wikimedia.org/wikipedia/pt/f/f1/Need_for_Speed_Heat_capa.png",
-            "classificacao_etaria": "Para maiores de 18 anos"
-        },
-    ];
-
-    //console.log(localStorage)
 
     produtos.forEach(produto => {
         const produtoDiv = document.createElement('div');
@@ -91,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         botao.classList.add('btn-carrinho');
         botao.innerHTML = "Adicionar ao Carrinho";
 
-        // Função botão
+        // Função do botão
         botao.onclick = function () {
             // Recuperar o carrinho do localStorage
             let actualCart = localStorage.getItem('cart');
@@ -99,32 +36,33 @@ document.addEventListener('DOMContentLoaded', function () {
                 actualCart = JSON.parse(actualCart);
             }
 
-            // Se o carrinho estiver vazio, inicializar como um array vazio
+            // Se o carrinho estiver vazio, inicializá-lo como um array vazio
             if (!actualCart) {
                 actualCart = [];
             }
 
             // Verificar se o produto já está no carrinho
-            const existentProduct = actualCart.find(prod => prod.id === produto.id);
+            const isProductInCart = actualCart.some(prod => prod.id === produto.id);
 
-            if (existentProduct) {
-                // Se o produto já estiver no carrinho, aumentar a quantidade
-                existentProduct.quantity += 1;
-            } else {
+            if (!isProductInCart) {
                 // Se o produto não estiver no carrinho, adicioná-lo com quantidade 1
                 produto.quantity = 1;
                 actualCart.push(produto);
+
+                // Salvar o carrinho atualizado no localStorage
+                localStorage.setItem('cart', JSON.stringify(actualCart));
+
+                // Atualizar a quantidade de itens no carrinho no console (ou na interface, conforme necessário)
+                console.log(JSON.parse(localStorage.getItem('cart')));
+            } else {
+                // Produto já está no carrinho, exibir uma mensagem ou realizar outra ação
+                alert("Este produto já está no carrinho!");
             }
-
-            // Salvar o carrinho atualizado no localStorage
-            localStorage.setItem('cart', JSON.stringify(actualCart));
-
-            // Atualizar a quantidade de itens no carrinho no console (ou na interface, conforme necessário)
-            console.log(JSON.parse(localStorage.getItem('cart')));
         }
 
         // Adicionar o botão ao DOM (exemplo, você pode ter um local específico para isso)
         document.body.appendChild(botao);
+
 
 
         produtoDiv.appendChild(imagem);
