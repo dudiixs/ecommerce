@@ -1,92 +1,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
+   
     font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-image: url("https://files.tecnoblog.net/wp-content/uploads/2021/10/fallout4.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed
+   margin: 0;
+   padding: 0;
+   background-color: #23232e;
 }
-
+.header {
+    color: #fff;
+    background-color: #4038a0;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.container-header {
+    display: flex;
+    color: #fff;
+    margin-left: 40%;
+}
 .container {
     display: flex;
     justify-content: center;
-    width: 100%;
-    margin-top: 100px;
 }
 
 .card {
-    background-color: #ffffff80;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 20%;
     padding: 30px;
-    border-radius: 4%;
-    box-shadow: 3px 3px 1px 0px #00000060
+    border-radius: 4px;
+    margin-bottom: 100px;
+    
 }
 
+.footer
+{
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #4038a0;
+    height:max-content;
+    margin: auto;
+    height: 192px;
+}
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #23232e
+    
+    
+}
+#userLabel, #senhaLabel{
+    font-weight: bold;
+}
+.label-float {
+    position: relative;
+    padding-top: 40px;
+    margin-bottom: 50px;    
 }
 
 .label-float input {
     width: 100%;
-    padding: 5px 5px;
-    display: inline-block;
-    border: 0;
-    border-bottom: 2px solid #23232e;
-    background-color: transparent;
     outline: none;
-    min-width: 180px;
+    border: none;
     font-size: 16px;
-    transition: all .3s ease-out;
-    border-radius: 0;
+    border-radius: 3px;
+    height: 40px;
+    text-indent: 10px;
+    background-color: #23232e17;
+    font-weight: bold;
 
 }
 
-.label-float {
-    position: relative;
-    padding-top: 13px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
 
 .label-float input:focus {
-    border-bottom: 2px solid #4038a0;
+    
+    color:#4038a0;
+    
 }
 
 .label-float label {
-    color: #23232e;
+    
     position: absolute;
     top: 0;
     left: 0;
     margin-top: 13px;
-    transition: all .3s ease-out;
+    
 }
 
-.label-float input:focus+label,
-.label-float input:valid+label {
-    font-size: 13px;
-    margin-top: 0;
-    color: #4038a0
-}
 
 button {
-    background-color: transparent;
-    border-color: #23232e;
-    color: #23232e;
-    padding: 7px;
+    display: block;
+    margin: auto;
+    background: rgb(91,84,171);
+    background: linear-gradient(90deg, rgba(91,84,171,1) 0%, rgba(64,56,160,1) 28%, rgba(64,56,160,1) 67%, rgba(91,84,171,1) 100%);
+    width: 80%;
+    height: 50px;
+    color: white;
+    border: none;
     font-weight: bold;
     font-size: 12pt;
-    margin-top: 20px;
     border-radius: 4px;
     cursor: pointer;
     outline: none;
-    transition: all .4s ease-out;
 }
 
 button:hover {
@@ -94,10 +113,7 @@ button:hover {
     color: #fff;
 }
 
-.justify-center {
-    display: flex;
-    justify-content: center;
-}
+
 
 hr {
     margin-top: 10%;
@@ -123,7 +139,7 @@ a:hover {
 }
 
 .fa-eye {
-    position: absolute;
+    
     top: 15px;
     right: 10px;
     cursor: pointer;

@@ -11,39 +11,43 @@
 </head>
 
 <body>
+    <div></div>
+    <div class="header">
+        <h1>X3 Games</h1></div>
+
+    <div class="container-header">
+        <h1>Acesse sua conta</h1></div>
     <div class="container">
         <div class="card">
-            <h1>X3 Games</h1>
+            
 
             <div id="msgError"></div>
 
             <div class="label-float">
-                <input type="text" id="usuario" paceholder="" required />
                 <label id="userLabel" for="usuario">Usuario</label>
+                <input type="text" id="usuario" placeholder="" required />
+                
             </div>
 
             <div class="label-float">
-                <input type="password" id="senha" paceholder="" required />
                 <label id="senhaLabel" for="senha">Senha</label>
-                <i class="fa fa-eye" aria-hidden="true"></i>
+                <input type="password" id="senha" placeholder="" required />
+                
             </div>
 
             <div class="justify-center">
-                <button onclick="entrar()">Entrar</button>
+                <button onclick="entrar()">Iniciar sessão</button>
             </div>
 
-            <div class="justify-center">
-                <hr />
-            </div>
-
-            <p>
-                Não tem uma conta?
-                <a href="cadastro.html">
-                    Cadastre-se
-                </a>
-            </p>
         </div>
+      
     </div>
+    <div class="footer"> <p>
+        Não tem uma conta?
+        <a href="cadastro.html">
+            Cadastre-se
+        </a>
+    </p></div>
 
     <script src="../js/login.js"></script>
 </body>
