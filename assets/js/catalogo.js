@@ -59,6 +59,16 @@ const produtos = [
         "imagem": "https://upload.wikimedia.org/wikipedia/pt/f/f1/Need_for_Speed_Heat_capa.png",
         "classificacao_etaria": "Para maiores de 18 anos"
     },
+    {
+        "id": 7,
+        "nome": "Dark Souls II",
+        "plataforma": "Playstation 5",
+        "preco": 229.90,
+        "estoque": 25,
+        "descricao": "Enfrente grandes monstros em um mundo no estilo Soul, onde se você morrer ira ter que recomeçar tudo do zero",
+        "imagem": "https://i.pinimg.com/736x/ee/3e/cd/ee3ecd3445b0c6596a78569d1f8da7a6.jpg",
+        "classificacao_etaria": "Para maiores de 18 anos"
+    },
 ];
 
 
