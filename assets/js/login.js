@@ -11,55 +11,34 @@ btn.addEventListener('click', () => {
 })
 
 function entrar() {
-    let usuario = document.querySelector('#usuario')
-    let userLabel = document.querySelector('#userLabel')
+    let usuario = document.querySelector('#usuario');
+    let senha = document.querySelector('#senha');
+    let msgError = document.querySelector('#msgError');
+    let listaUser = JSON.parse(localStorage.getItem('listaUser')) || [];
 
-    let senha = document.querySelector('#senha')
-    let senhaLabel = document.querySelector('#senhaLabel')
+    let userValid = listaUser.find(item => item.userCad === usuario.value && item.senhaCad === senha.value);
 
-    let msgError = document.querySelector('#msgError')
-    let listaUser = []
+    if (userValid) {
+        // Limpa mensagem de erro e estilos
+        msgError.style.display = 'none';
+        usuario.style.borderColor = '';
+        senha.style.borderColor = '';
 
-    let userValid = {
-        nome: '',
-        user: '',
-        senha: ''
-    }
+        // Define o usuário como logado
+        localStorage.setItem('userLogado', JSON.stringify(userValid));
 
-    listaUser = JSON.parse(localStorage.getItem('listaUser'))
+        // Gera um token aleatório
+        let token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2);
+        localStorage.setItem('token', token);
 
-    if (listaUser) {
-        listaUser.forEach((item) => {
-            if (usuario.value == item.userCad && senha.value == item.senhaCad) {
-
-                userValid = {
-                    nome: item.nomeCad,
-                    user: item.userCad,
-                    senha: item.senhaCad
-                }
-
-            }
-        })
-    }
-
-
-
-    if (usuario.value == userValid.user && senha.value == userValid.senha) {
-        window.location.href = '/index.html'
-
-        let mathRandom = Math.random().toString(16).substr(2)
-        let token = mathRandom + mathRandom
-
-        localStorage.setItem('token', token)
-        localStorage.setItem('userLogado', JSON.stringify(userValid))
+        // Redireciona para a página principal
+        window.location.href = '/index.html';
     } else {
-        userLabel.setAttribute('style', 'color: red')
-        usuario.setAttribute('style', 'border-color: red')
-        senhaLabel.setAttribute('style', 'color: red')
-        senha.setAttribute('style', 'border-color: red')
-        msgError.setAttribute('style', 'display: block')
-        msgError.innerHTML = 'Usuário ou senha incorretos'
-        usuario.focus()
+        // Exibe mensagem de erro e estilos indicando erro
+        msgError.style.display = 'block';
+        msgError.innerHTML = 'Usuário ou senha incorretos';
+        usuario.style.borderColor = 'red';
+        senha.style.borderColor = 'red';
+        usuario.focus();
     }
-
 }

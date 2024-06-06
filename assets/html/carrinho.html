@@ -8,6 +8,7 @@
     <link rel="shortcut icon" type="imagex/png" href="../img/458b0a1ea92c0b7e39d0d427c5262dfb.ico">
     <link rel="stylesheet" href="../css/carrinho.css">
     <link rel="stylesheet" href="../css/navbar.css">
+
     <title>Carrinho de Compras - X3 Games</title>
 </head>
 
@@ -24,15 +25,22 @@
                 <li><a href="../../index.html"><i class="bi bi-house"></i></a></li>
                 <li><a href="../html/produtos.html"><i class="bi bi-collection"></i></a></li>
                 <li><a href="../html/carrinho.html"><i class="bi bi-cart2"></i></a><span id="cart-counter"
-                        class="cart-count">0</span>
-                </li>
+                        class="cart-count">0</span></li>
                 <li><a href="../html/perfil.html"><i class="bi bi-person-circle"></i></a></li>
             </ul>
         </nav>
     </header>
     <h2>Carrinho de Compras</h2>
     <div id="carrinho" class="carrinho-container"></div>
-    <!-- Adiciona a classe "carrinho-container" para facilitar a seleção via JavaScript -->
+    <div class="resumo-carrinho">
+        <p id="total-carrinho">Total: R$ 0,00</p>
+        <button id="botao-comprar">Comprar</button>
+    </div>
+    <div class="mensagem-agradecimento">
+        <img src="https://img.freepik.com/vetores-premium/coracao-bonito-anjo-com-ilustracao-de-icone-dos-desenhos-animados-de-sinal-de-amor_138676-2696.jpg"
+            alt="Obrigado">
+        <p>Obrigado por comprar conosco!</p>
+    </div>
     <script src="../js/navbar.js"></script>
     <script type="module" src="../js/carrinho.js"></script>
 </body>

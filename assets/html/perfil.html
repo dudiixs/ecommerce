@@ -5,15 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/perfil.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <title>Perfil - X3 Games</title>
-
 </head>
 
 <body>
-    <div class="profile-container">
-        <h1>Perfil</h1>
-        <p>Bem-vindo, <span id="username"></span>!</p>
-        <button onclick="logout()">Sair</button>
+    <div class="container">
+        <div class="profile-container">
+            <h1 class="title">Perfil</h1>
+            <div class="profile-info">
+                <p>Bem-vindo, <span id="username"></span>!</p>
+
+                <h2>Alterar Senha</h2>
+                <form id="changePasswordForm" onsubmit="return changePassword()">
+                    <label for="oldPassword">Senha Atual:</label>
+                    <input type="password" id="oldPassword" required>
+                    <br>
+                    <label for="newPassword">Nova Senha:</label>
+                    <input type="password" id="newPassword" required>
+                    <br>
+                    <label for="confirmPassword">Confirmar Nova Senha:</label>
+                    <input type="password" id="confirmPassword" required>
+                    <br>
+                    <button type="submit" class="btn-senha">Alterar Senha</button>
+                    <div id="development">
+                        <img src="https://img.freepik.com/vetores-gratis/brilho-gradiente-de-sinal-de-aviso_78370-1774.jpg?t=st=1717684181~exp=1717687781~hmac=24fbf551c1d48252a7acea8d7d5c33f79fdd4210294297fd2c90038eb13aa92f&w=740"
+                            alt="Em Desenvolvimento" style="display: none;">
+                        <p style="display: none;">Em Desenvolvimento</p>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script src="../js/perfil.js"></script>

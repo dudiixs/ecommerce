@@ -132,4 +132,3 @@ btnConfirm.addEventListener('click', () => {
 
 
 
-

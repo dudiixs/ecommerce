@@ -51,7 +51,22 @@ window.atualizarContadorCarrinho = function () {
     const contador = document.getElementById('cart-counter');
     const produtosNoCarrinho = JSON.parse(localStorage.getItem('cart')) || [];
     contador.textContent = produtosNoCarrinho.length;
+};
+
+// Função para calcular o valor total do carrinho
+function calcularTotalCarrinho() {
+    const produtosNoCarrinho = JSON.parse(localStorage.getItem('cart')) || [];
+    const total = produtosNoCarrinho.reduce((acc, produto) => acc + (produto.preco * produto.quantity), 0);
+    return total;
 }
+
+// Função para renderizar o resumo do carrinho
+function renderizarResumoCarrinho() {
+    const totalCarrinhoElement = document.getElementById('total-carrinho');
+    const total = calcularTotalCarrinho();
+    totalCarrinhoElement.textContent = `Total: ${total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+}
+
 // Função para adicionar um produto ao carrinho
 function adicionarAoCarrinho(produto) {
     // Recuperar o carrinho do localStorage
@@ -123,10 +138,17 @@ function renderizarProdutosNoCarrinho() {
 
     // Atualiza o contador do carrinho
     atualizarContadorCarrinho();
+
+    // Renderiza o resumo do carrinho
+    renderizarResumoCarrinho();
 }
 
-
-
+// Event listener para o botão de comprar
+document.getElementById('botao-comprar').addEventListener('click', function () {
+    alert("Compra realizada com sucesso!");
+    localStorage.removeItem('cart');
+    renderizarProdutosNoCarrinho();
+});
 
 // Event listener para os botões "Adicionar ao Carrinho"
 document.addEventListener("click", function (event) {
@@ -142,4 +164,21 @@ document.addEventListener("click", function (event) {
 document.addEventListener('DOMContentLoaded', function () {
     renderizarProdutosNoCatalogo();
     renderizarProdutosNoCarrinho();
+});
+
+
+// Função para mostrar a mensagem de agradecimento
+function mostrarMensagemAgradecimento() {
+    const carrinhoContainer = document.querySelector('.carrinho-container');
+    const resumoCarrinho = document.querySelector('.resumo-carrinho');
+    const mensagemAgradecimento = document.querySelector('.mensagem-agradecimento');
+
+    carrinhoContainer.style.display = 'none';
+    resumoCarrinho.style.display = 'none';
+    mensagemAgradecimento.style.display = 'block';
+}
+
+// Event listener para o botão "Comprar"
+document.getElementById('botao-comprar').addEventListener('click', function () {
+    mostrarMensagemAgradecimento();
 });
