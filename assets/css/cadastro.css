@@ -1,93 +1,109 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
+   
     font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-image: url("https://files.tecnoblog.net/wp-content/uploads/2021/10/fallout4.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed
+   margin: 0;
+   padding: 0;
+   background-color: #fff;
 }
-
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items:end;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #23232e;
+    height: 8vh;
+    margin-bottom: 50px;
+}
+.container-header {
+    text-align: center;
+    color: #23232e;
+    margin-right: 9%;
+}
 .container {
     display: flex;
     justify-content: center;
-    width: 100%;
-    margin-top: 100px;
 }
 
 .card {
-    background-color: #ffffff80;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0f0f13;
+    width: 14%;
     padding: 30px;
-    border-radius: 4%;
-    box-shadow: 3px 3px 1px 0px #00000060;
-    width: 400px;
+    border-radius: 4px;
+    margin-bottom: 50px;
+    color: #bbbbca;
+    
 }
 
-h1 {
-    text-align: center;
+.footer
+{
+    padding: 20px;
     margin-bottom: 20px;
-    color: #23232e
+    background-color: #23232e;
+    height:max-content;
+    margin: auto;
+    height: 13.3vh;
+}
+
+#userLabel, #senhaLabel{
+    font-weight: bold;
+}
+.label-float {
+    position: relative;
+    padding-top: 40px;
+    margin-bottom: 25px;    
 }
 
 .label-float input {
     width: 100%;
-    padding: 5px 5px;
-    display: inline-block;
-    border: 0;
-    border-bottom: 2px solid #23232e;
-    background-color: transparent;
     outline: none;
-    min-width: 180px;
+    border: none;
     font-size: 16px;
-    transition: all .3s ease-out;
-    border-radius: 0;
+    border-radius: 3px;
+    height: 40px;
+    text-indent: 10px;
+    background-color: #393944;
+    font-weight: bold;
 
 }
 
-.label-float {
-    position: relative;
-    padding-top: 13px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
 
 .label-float input:focus {
-    border-bottom: 2px solid #4038a0;
+    color:#4038a0;
+    
 }
 
 .label-float label {
-    color: #23232e;
     position: absolute;
     top: 0;
     left: 0;
     margin-top: 13px;
-    transition: all .3s ease-out;
+    
 }
 
-.label-float input:focus+label,
-.label-float input:valid+label {
-    font-size: 13px;
-    margin-top: 0;
-    color: #4038a0
-}
 
 button {
-    background-color: transparent;
-    border-color: #23232e;
-    color: #23232e;
-    padding: 7px;
+    display: block;
+    margin: auto;
+    background: #5b54ab;
+    background: linear-gradient(90deg, rgba(91,84,171,1) 0%, rgba(64,56,160,1) 28%, rgba(64,56,160,1) 67%, rgba(91,84,171,1) 100%);
+    width: 80%;
+    height: 50px;
+    margin-top: 30px;
+    color: white;
+    border: none;
     font-weight: bold;
     font-size: 12pt;
-    margin-top: 20px;
     border-radius: 4px;
     cursor: pointer;
     outline: none;
-    transition: all .4s ease-out;
 }
 
 button:hover {
@@ -95,17 +111,38 @@ button:hover {
     color: #fff;
 }
 
-.justify-center {
-    display: flex;
-    justify-content: center;
+
+
+hr {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 60%;
+}
+
+p {
+    color: #bbbbca;
+    font-size: 14pt;
+    text-align: center;
+}
+
+a {
+    color: #7a3077;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all .3s ease-out;
+}
+
+a:hover {
+    color: #23232e;
 }
 
 .fa-eye {
     position: absolute;
-    top: 15px;
-    right: 10px;
+    top: 52px;
+    right:5px;
     cursor: pointer;
-    color: #0d009c;
+    color: #6559ec;
+;
 }
 
 #msgError {
@@ -116,12 +153,11 @@ button:hover {
     border-radius: 4px;
     display: none;
 }
-
-#msgSuccess {
-    text-align: center;
-    color: #00bb00;
-    background-color: #bbffbe;
-    padding: 10px;
-    border-radius: 4px;
-    display: none;
+.title {
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    padding-bottom: 5px;
 }
