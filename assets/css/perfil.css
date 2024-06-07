@@ -116,11 +116,6 @@ input[type="password"] {
     height: auto;
     display: block;
     margin: 0 auto;
-    position: absolute;
-    top: -60px;
-    /* Posiciona a imagem acima do texto */
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 1;
 }
 

@@ -1,20 +1,21 @@
 // Função para obter o usuário logado do localStorage
 function getUser() {
-    let loggedUser = localStorage.getItem('loggedUser');
+    let loggedUser = localStorage.getItem('auth');
     return loggedUser ? JSON.parse(loggedUser) : null;
 }
 
 // Função para exibir o nome do usuário no perfil
-// function showUsername() {
-//     let user = getUser();
-//     if (user) {
-//         document.getElementById('username').innerText = user.name;
-//     } else {
-//         alert('Usuário não está logado.');  // Verificar se este alerta está sendo exibido
-//         // Redirecionar para página de login ou outra ação apropriada
-//         window.location.href = '/assets/html/login.html';
-//     }
-// }
+function showUsername() {
+    let user = getUser();
+    console.log(user)
+    if (user) {
+        document.getElementById('username').innerText = user.nomeCad;
+    } else {
+        alert('Usuário não está logado.');  // Verificar se este alerta está sendo exibido
+        // Redirecionar para página de login ou outra ação apropriada
+        window.location.href = '/assets/html/login.html';
+    }
+}
 
 // Chamada para exibir o nome do usuário quando a página carrega
 window.onload = function () {
@@ -24,17 +25,21 @@ window.onload = function () {
 // Função para alterar a senha do usuário
 function changePassword() {
     // Mostra a mensagem e a imagem "Em Desenvolvimento"
-    showDevelopment();
+    // showDevelopment();
 
-    // Atualiza a senha do usuário (caso queira implementar a lógica de alteração de senha, adicione aqui)
-    // Exemplo de código para atualizar a senha:
-    /*
+    let oldPassword = document.getElementById('oldPassword').value;
     let newPassword = document.getElementById('newPassword').value;
     let confirmPassword = document.getElementById('confirmPassword').value;
     let user = getUser();
+    const userPassword = user.senhaCad;
 
     if (!user) {
         alert('Usuário não está logado.');
+        return false;
+    }
+
+    if (oldPassword !== userPassword) {
+        alert('A senha atual não coincide.');
         return false;
     }
 
@@ -43,20 +48,21 @@ function changePassword() {
         return false;
     }
 
-    user.password = newPassword;
-    localStorage.setItem('loggedUser', JSON.stringify(user));
+    user.senhaCad = newPassword;
+    localStorage.setItem('auth', JSON.stringify({}));
+    localStorage.setItem('listaUser', JSON.stringify([user]))
     alert('Senha alterada com sucesso.');
     window.location.href = '/assets/html/login.html';
-    */
+
 
     return false; // Previne o envio do formulário
 }
 
-// Função para mostrar a mensagem e a imagem "Em Desenvolvimento"
-function showDevelopment() {
-    let developmentImg = document.querySelector('#development img');
-    let developmentText = document.querySelector('#development p');
+// // Função para mostrar a mensagem e a imagem "Em Desenvolvimento"
+// function showDevelopment() {
+//     let developmentImg = document.querySelector('#development img');
+//     let developmentText = document.querySelector('#development p');
 
-    developmentImg.style.display = 'block';
-    developmentText.style.display = 'block';
-}
+//     developmentImg.style.display = 'block';
+//     developmentText.style.display = 'block';
+// }

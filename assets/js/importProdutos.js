@@ -58,6 +58,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Produto já está no carrinho, exibir uma mensagem ou realizar outra ação
                 alert("Este produto já está no carrinho!");
             }
+
+            const contador = document.getElementById('cart-counter');
+            const produtosNoCarrinho = JSON.parse(localStorage.getItem('cart')) || [];
+            contador.textContent = produtosNoCarrinho.length;
+
+            console.log(produtosNoCarrinho.length)
         }
 
         // Adicionar o botão ao DOM (exemplo, você pode ter um local específico para isso)

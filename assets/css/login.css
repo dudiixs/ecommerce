@@ -1,32 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-   
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
 }
 
 body {
-   margin: 0;
-   padding: 0;
-   background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
 .header {
     display: flex;
     justify-content: space-around;
-    align-items:end;
+    align-items: end;
     font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
     background: #23232e;
     height: 8vh;
     margin-bottom: 80px;
 }
+
 .container-header {
     text-align: center;
     color: #23232e;
     margin-right: 5%;
 }
+
 .container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-width: 800px;
+    /* Limita a largura máxima da área de conteúdo */
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
 }
 
 .card {
@@ -34,31 +54,34 @@ body {
     flex-direction: column;
     justify-content: center;
     background-color: #0f0f13;
-    width: 14%;
+    width: 100%;
+    max-width: 400px;
+    /* Limita a largura máxima do card */
     padding: 30px;
     border-radius: 4px;
     margin-bottom: 200px;
     color: #bbbbca;
-    
 }
 
-.footer
-{
-    padding: 20px;
-    margin-bottom: 20px;
+.footer {
     background-color: #23232e;
-    height:max-content;
-    margin: auto;
-    height: 13.3vh;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
-#userLabel, #senhaLabel{
+#userLabel,
+#senhaLabel {
     font-weight: bold;
 }
+
 .label-float {
     position: relative;
     padding-top: 40px;
-    margin-bottom: 25px;    
+    margin-bottom: 25px;
 }
 
 .label-float input {
@@ -71,13 +94,18 @@ body {
     text-indent: 10px;
     background-color: #393944;
     font-weight: bold;
-
+    color: #ffffff;
+    /* Cor da letra digitada */
 }
 
+.label-float input::placeholder {
+    color: #bbbbca;
+    /* Cor do placeholder */
+}
 
 .label-float input:focus {
-    color:#4038a0;
-    
+    color: #ffffff;
+    /* Cor da letra digitada ao focar no campo */
 }
 
 .label-float label {
@@ -85,15 +113,13 @@ body {
     top: 0;
     left: 0;
     margin-top: 13px;
-    
 }
-
 
 button {
     display: block;
     margin: auto;
     background: #5b54ab;
-    background: linear-gradient(90deg, rgba(91,84,171,1) 0%, rgba(64,56,160,1) 28%, rgba(64,56,160,1) 67%, rgba(91,84,171,1) 100%);
+    background: linear-gradient(90deg, rgba(91, 84, 171, 1) 0%, rgba(64, 56, 160, 1) 28%, rgba(64, 56, 160, 1) 67%, rgba(91, 84, 171, 1) 100%);
     width: 80%;
     height: 50px;
     margin-top: 30px;
@@ -104,14 +130,15 @@ button {
     border-radius: 4px;
     cursor: pointer;
     outline: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
-    background-color: #23232e;
-    color: #fff;
+    background-color: #ff8c00;
+    /* Nova cor de fundo ao passar o mouse */
+    color: #23232e;
+    /* Nova cor da letra ao passar o mouse */
 }
-
-
 
 hr {
     margin-top: 10%;
@@ -133,16 +160,15 @@ a {
 }
 
 a:hover {
-    color: #23232e;
+    color: #fff;
 }
 
 .fa-eye {
     position: absolute;
     top: 52px;
-    right:5px;
+    right: 5px;
     cursor: pointer;
     color: #6559ec;
-;
 }
 
 #msgError {
@@ -153,6 +179,7 @@ a:hover {
     border-radius: 4px;
     display: none;
 }
+
 .title {
     color: #fff;
     font-size: 24px;

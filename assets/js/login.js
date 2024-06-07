@@ -17,6 +17,7 @@ function entrar() {
     let listaUser = JSON.parse(localStorage.getItem('listaUser')) || [];
 
     let userValid = listaUser.find(item => item.userCad === usuario.value && item.senhaCad === senha.value);
+    console.log(userValid)
 
     if (userValid) {
         // Limpa mensagem de erro e estilos
@@ -25,7 +26,7 @@ function entrar() {
         senha.style.borderColor = '';
 
         // Define o usuário como logado
-        localStorage.setItem('userLogado', JSON.stringify(userValid));
+        localStorage.setItem('auth', JSON.stringify(userValid));
 
         // Gera um token aleatório
         let token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2);
